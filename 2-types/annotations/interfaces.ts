@@ -47,3 +47,27 @@ const newCivic = {
 printVehicle(swift); //correct
 printVehicle(oldCivic); //correct
 // printVehicle(newCivic); //error bz broken property is missing
+
+//------------------------------------------------------------------------
+
+interface Reportable {
+  summary(): string;
+}
+
+const printSummary = (item: Reportable): void => {
+  console.log(item.summary());
+};
+
+const drink = {
+  color: "brown",
+  carbonated: true,
+  suger: 40,
+  summary(): string {
+    return `my drink has ${this.suger} grams of suger`;
+  },
+};
+
+printSummary(drink); //correct
+printSummary(swift); //correct
+printSummary(oldCivic); //correct
+printSummary(newCivic); //correct
